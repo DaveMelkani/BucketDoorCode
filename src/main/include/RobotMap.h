@@ -25,7 +25,7 @@
 // constexpr int kRangeFinderModule = 1;
 constexpr int joystickleftPort =1;
 constexpr int joystickrightPort =1;
-constexpr int LEFTMOTOR =1;
-constexpr int RIGHTMOTOR =1;
-constexpr int armMovePort =3;
-constexpr int ArmMotorPort =4;
+//constexpr int LEFTMOTOR =1;
+//constexpr int RIGHTMOTOR =1;
+constexpr int armMovePort = 3;
+constexpr int cargoMotorPort = 3;

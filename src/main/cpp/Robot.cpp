@@ -6,12 +6,12 @@
 /*----------------------------------------------------------------------------*/
 
 #include "Robot.h"
-
+#include "Subsystems/CargoDoor.h"
 #include <Commands/Scheduler.h>
 #include <SmartDashboard/SmartDashboard.h>
 
 
-Arm* Robot::arm;
+CargoDoor* Robot::cargo;
 //DriveTrain* Robot::drive;
 OI*Robot::m_oi;
 
@@ -19,7 +19,7 @@ OI*Robot::m_oi;
 
 void Robot::RobotInit() {
 
-	arm = new Arm();
+	cargo = new CargoDoor();
 	//drive = new DriveTrain();
 	m_oi = new OI();
 	//m_chooser.AddDefault("Default Auto", &m_defaultAuto);
@@ -32,7 +32,10 @@ void Robot::RobotInit() {
  * can use it to reset any subsystem information you want to clear when the
  * robot is disabled.
  */
-void Robot::DisabledInit() {}
+void Robot::DisabledInit() 
+{
+	cargo->reset();
+}
 
 void Robot::DisabledPeriodic() {
 	frc::Scheduler::GetInstance()->Run();

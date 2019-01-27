@@ -9,10 +9,11 @@
 #include "RobotMap.h"
 class OI {
 private:
-	Joystick*driveStickLeft;
-	Joystick*driveStickRight;
 	Joystick*moveArmLeft;
-	Button*leftRightDrive;
+	Button*releaseCargoShuttle;
+	Button*releaseCargoRocket;
+	Button*holdCargo;
+	Button*resetCargo;
 public:
 	OI();
 	~OI();

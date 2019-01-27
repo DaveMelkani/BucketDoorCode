@@ -6,17 +6,25 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-
 #include "OI.h"
-#include <Commands/Command.h>
+#include "WPILib.h"
+#include "ctre/Phoenix.h"
+#include "RobotMap.h"
+#include <Commands/Subsystem.h>
 
-class moveArm : public frc::Command {
+class CargoDoor : public frc::Subsystem {
+private:
+	TalonSRX* cargoDoorMotor;
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+
 public:
-	moveArm();
-	void Initialize() override;
-	void Execute() override;
-	bool IsFinished() override;
-	void End() override;
-	void Interrupted() override;
+ 	CargoDoor();
+	~CargoDoor();
+	void move(double cargoValue);
+	TalonSRX* getCargoPort();
+	void reset();
+	double getPosition();
+	void InitDefaultCommand() override;
 };
 

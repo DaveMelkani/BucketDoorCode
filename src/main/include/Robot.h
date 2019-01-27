@@ -9,17 +9,15 @@
 
 #include <Commands/Command.h>
 #include <SmartDashboard/SendableChooser.h>
+#include "Subsystems/CargoDoor.h"
 #include <TimedRobot.h>
-
-#include "Subsystems/DriveTrain.h"
-#include "Subsystems/Arm.h"
 #include "OI.h"
 
 
 class Robot : public frc::TimedRobot {
 public:
-	static Arm* arm;
-	static DriveTrain* drive;
+	static CargoDoor* cargo;
+	//static DriveTrain* drive;
 	static OI* m_oi;
 	void RobotInit() override;
 	void DisabledInit() override;
