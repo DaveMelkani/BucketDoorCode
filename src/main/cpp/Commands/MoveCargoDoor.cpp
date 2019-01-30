@@ -27,12 +27,10 @@ void MoveCargoDoor::Initialize() {
   if (Robot::cargo->getPosition() < input) {
     target = Robot::cargo->getPosition() + input;
     direction = -1;
-    std::cout << "going forward" << std::endl;
   }
   else if (Robot::cargo->getPosition() > input) {
     target = Robot::cargo->getPosition() - input;
     direction = 1;
-    std::cout << "going backward" << std::endl;
   }
   std::cout << target << std::endl;
 

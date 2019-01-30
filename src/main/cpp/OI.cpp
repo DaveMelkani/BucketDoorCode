@@ -23,7 +23,7 @@ resetCargo(new JoystickButton(moveArmLeft, 8)) {
 releaseCargoShuttle->ToggleWhenPressed(new MoveCargoDoor(44));
 releaseCargoRocket->ToggleWhenPressed(new MoveCargoDoor(5));
 holdCargo->ToggleWhenPressed(new MoveCargoDoor(-15));
-resetCargo->WhenPressed(new Reset());
+resetCargo->ToggleWhenPressed(new MoveCargoDoor(0));
 }
 Joystick* OI::getMoveArmLeft() {
 	return moveArmLeft;
