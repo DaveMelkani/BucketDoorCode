@@ -42,13 +42,15 @@ void MoveCargoDoor::Execute() {
   currentPosition = Robot::cargo->getPosition();
   cout << "Current Position:" << currentPosition << endl;
   cout << "diff:" << fabs (target - currentPosition) << endl;
-  double error = target - currentPosition;
   Robot::cargo->move(direction * 0.2);
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool MoveCargoDoor::IsFinished() {
-   if (fabs(target - currentPosition) < 50) { //|| Robot::cargo->getCargoPort()->GetSensorCollection().IsFwdLimitSwitchClosed())   {
+   if (direction < 0 && target - currentPosition > 0) { //|| Robot::cargo->getCargoPort()->GetSensorCollection().IsFwdLimitSwitchClosed())   {
+     return true;
+   }
+   else if (direction > 0 && target - currentPosition < 0) {
      return true;
    }
    else {
